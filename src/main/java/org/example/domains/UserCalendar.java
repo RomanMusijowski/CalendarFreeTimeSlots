@@ -1,4 +1,4 @@
-package org.example;
+package org.example.domains;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -7,24 +7,24 @@ import java.util.List;
 
 public class UserCalendar {
     @JsonProperty("working_hours")
-    private Slot slot;
+    private Slot workingHours;
     @JsonProperty("planned_meeting")
     private List<Slot> meetings = new ArrayList<>();
 
     public UserCalendar() {
     }
 
-    public UserCalendar(Slot slot, List<Slot> meetings) {
-        this.slot = slot;
+    public UserCalendar(Slot workingHours, List<Slot> meetings) {
+        this.workingHours = workingHours;
         this.meetings = meetings;
     }
 
-    public Slot getSlot() {
-        return slot;
+    public Slot getWorkingHours() {
+        return workingHours;
     }
 
-    public void setSlot(Slot slot) {
-        this.slot = slot;
+    public void setWorkingHours(Slot workingHours) {
+        this.workingHours = workingHours;
     }
 
     public List<Slot> getMeetings() {
@@ -38,7 +38,7 @@ public class UserCalendar {
     @Override
     public String toString() {
         return "org.example.Calendar{" +
-                "workingHours=" + slot +
+                "workingHours=" + workingHours +
                 ", workingHoursList=" + meetings.toString() +
                 '}';
     }

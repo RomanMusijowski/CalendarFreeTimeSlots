@@ -2,6 +2,8 @@ package org.example;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.example.domains.Slot;
+import org.example.domains.UserCalendar;
 
 import java.text.ParseException;
 import java.util.*;
@@ -25,8 +27,8 @@ public class SlotChecker {
         Map<String, String> result = new LinkedHashMap<>();
         Integer targetMinutes = stringToMinutes(duration);
 
-        Date startTime = getStartTime(user1.getSlot().getStart(), user2.getSlot().getStart());
-        Date endTime = getEndTime(user1.getSlot().getEnd(), user2.getSlot().getEnd());
+        Date startTime = getStartTime(user1.getWorkingHours().getStart(), user2.getWorkingHours().getStart());
+        Date endTime = getEndTime(user1.getWorkingHours().getEnd(), user2.getWorkingHours().getEnd());
 
         for (int i = 0; i <= merged.size(); i++) {
             if (i == 0) {

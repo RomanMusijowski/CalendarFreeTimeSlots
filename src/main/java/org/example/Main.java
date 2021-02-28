@@ -26,7 +26,7 @@ public class Main {
                 "{\"start\":\"14:30\",\"end\":\"15:00\"}," +
                 "{\"start\":\"16:00\",\"end\":\"17:00\"}]}";
 
-        String[][] slots = checker.findFreeSlots(cal1, cal2, "[99:99]");
+        String[][] slots = checker.findFreeSlots(cal1, cal2, "[00:30]");
         System.out.println(Arrays.deepToString(slots));
     }
 }
